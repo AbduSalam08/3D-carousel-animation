@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+font-family: 'Bebas Neue', cursive, sans-serif !important;}
+
+html,
+body {
+  height: 100%;
+  cursor: grab;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  background: #111;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.info-tab {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.watermark {
+  position: fixed;
+  top: 3%;
+  left: 3.5%;
+  font-size: 20px;
+  color: #adadad30;
+}
+.info {
+  width: 30%;
+  position: relative;
+  background-color: #55555470;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  margin-left: 50px;
+  border-radius: 10px;
+  z-index: 99;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 1);
+}
+.bgText {
+	position: absolute;
+	bottom:-14%;
+	right: 1%;
+	font-size: 200px;
+	z-index: -2;
+	color: #00000030;
+	transform: rotateX(20deg);
+}
+.info h1 {
+  font-size: 55px;
+  letter-spacing: 3px;
+  color: #eff5ff;
+  font-weight: 300;
+font-weight: bold;
+}
+.info h1 span {
+  color: #0099ff;
+  border-radius: 4px;
+  line-height: 50px;
+}
+.info button {
+  margin-top: 30px;
+  background-color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 6px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#slider-main,
+#slider-item {
+  position: relative;
+  display: flex;
+  margin: auto;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+}
+
+#slider-main img {
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* line-height: 200px; */
+  font-size: 50px;
+  object-fit: contain;
+  text-align: center;
+  /* box-shadow: 0 0 8px 5px #111; */
+  border-radius: 12px;
+  transition: all 0.2s linear;
+  box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+  -webkit-box-reflect: below 10px
+    linear-gradient(transparent, transparent, #0005);
+  -moz-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+  -o-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+}
+
+#slider-main img:hover {
+  box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  -webkit-box-reflect: below 10px
+    linear-gradient(transparent, transparent, #0007);
+  -moz-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  box-0-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+}
+
+#slider-main p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  color: #fff;
+  font-size: 34px;
+  text-align: center;
+  text-shadow: -5px 5px 10px rgba(0, 0, 0, 1);
+}
+
+#ground {
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  background: -webkit-radial-gradient(
+    center center,
+    farthest-side,
+    #9993,
+    transparent
+  );
+}
+
+#music-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spinRevert {
+  from {
+    transform: rotateY(360deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
